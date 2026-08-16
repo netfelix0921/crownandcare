@@ -501,6 +501,34 @@ h1,h2,h3,h4{ font-family: var(--font-display); color: var(--burgundy-dark); font
 
 @media(max-width: 480px){ .form-row-split{ flex-direction: column; } }
 
+/* Date & time fields — mobile fixes */
+.form-row input[type="date"],
+.form-row input[type="time"]{
+  min-height: 3rem;
+  padding-right: .6rem;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.form-row input[type="date"]::-webkit-calendar-picker-indicator,
+.form-row input[type="time"]::-webkit-calendar-picker-indicator{
+  padding: .35rem;
+  margin-left: .4rem;
+  cursor: pointer;
+  opacity: .75;
+}
+@media(max-width: 767px){
+  /* Prevent iOS Safari from auto-zooming the page when these fields are tapped */
+  .form-row input,
+  .form-row select,
+  .form-row textarea{
+    font-size: 16px;
+  }
+  .form-row input[type="date"],
+  .form-row input[type="time"]{
+    width: 100%;
+  }
+}
+
 .success-icon{
   width: 3.5rem; height: 3.5rem; border-radius: 50%;
   background: #E6F4EC; color: #2E9E6D;
