@@ -214,16 +214,17 @@ h1,h2,h3,h4{ font-family: var(--font-display); color: var(--burgundy-dark); font
 .fact svg{ color: var(--burgundy); flex-shrink: 0; }
 
 .hero-visual{ position: relative; }
-.hero-frame{
-  position: relative; border-radius: var(--radius-lg); overflow: hidden;
-  box-shadow: var(--shadow-lg); background: var(--pink-light);
-  aspect-ratio: 4 / 5;
+
+/* Plain hero image (no framed/pink-box wrapper) */
+.hero-plain-img{
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  display: block;
+  object-fit: cover;
 }
-.hero-frame img{ width: 100%; height: 100%; object-fit: cover; }
-.hero-frame-fallback{
-  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-  color: var(--burgundy); background: linear-gradient(150deg, var(--pink-light), #F3D6DB);
-}
+
 .hero-chip{
   position: absolute; left: -.5rem; bottom: -1.25rem;
   display: flex; align-items: center; gap: .6rem;
