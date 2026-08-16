@@ -1,0 +1,11 @@
+{
+  "name": "Crown & Care Dental Center",
+  "short_name": "Crown & Care",
+  "icons": [
+    { "src": "images/favicon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "images/favicon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#9F1730",
+  "background_color": "#FFF9FA",
+  "display": "standalone"
+}
