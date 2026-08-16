@@ -144,8 +144,8 @@ h1,h2,h3,h4{ font-family: var(--font-display); color: var(--burgundy-dark); font
 .brand-name{ font-family: var(--font-display); font-weight: 800; font-size: 1rem; color: var(--burgundy-dark); }
 .brand-sub{ font-size: .625rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
 
-.nav-links{ display: none; align-items: center; gap: .25rem; }
-@media(min-width: 1024px){ .nav-links{ display: flex; } }
+.nav-links{ display: none !important; align-items: center; gap: .25rem; }
+@media(min-width: 1024px){ .nav-links{ display: flex !important; } }
 .nav-links a{
   padding: .55rem .9rem; border-radius: 999px; font-weight: 600; font-size: .9375rem; color: var(--text);
   transition: background .18s, color .18s;
@@ -201,7 +201,7 @@ h1,h2,h3,h4{ font-family: var(--font-display); color: var(--burgundy-dark); font
   .hero-grid{ grid-template-columns: 1.05fr .95fr; gap: 3.5rem; padding-bottom: 4.5rem; }
 }
 
-.hero-h1{ font-size: clamp(2.5rem, 6.6vw, 4.25rem); letter-spacing: -.03em; }
+.hero-h1{ font-size: clamp(2.1rem, 8.5vw, 4.25rem); letter-spacing: -.03em; }
 .hero-h1 span{ display: block; }
 .hero-h1 .accent{ color: var(--burgundy); }
 .hero-lead{ margin-top: 1.375rem; font-size: 1.125rem; color: var(--muted); max-width: 34rem; }
@@ -515,3 +515,41 @@ h1,h2,h3,h4{ font-family: var(--font-display); color: var(--burgundy-dark); font
   display: flex; align-items: center; justify-content: center;
 }
 .lightbox-close:hover{ background: rgba(255,255,255,.2); }
+
+/* ==========================================================
+   MOBILE AUDIT FIXES
+   ========================================================== */
+@media(max-width: 767px){
+  /* Tighter, more compact section spacing on phones */
+  .section{ padding: 3.25rem 0; }
+  .hero{ padding-top: 2rem; }
+
+  /* Stack hero buttons full-width for easy tapping */
+  .hero-actions{ flex-direction: column; align-items: stretch; gap: .75rem; }
+  .hero-actions .btn{ width: 100%; }
+
+  /* Prevent hero facts row from feeling cramped */
+  .hero-facts{ gap: .65rem 1.25rem; }
+  .fact{ font-size: .8125rem; }
+
+  /* Keep the floating chip from overflowing small screens */
+  .hero-chip{ font-size: .75rem; padding: .55rem .85rem; max-width: calc(100% - 1.5rem); }
+
+  /* Ensure wrap has breathing room on very narrow phones */
+  .wrap{ padding: 0 1rem; }
+
+  /* Give tap targets in mobile nav drawer a bit more room */
+  .mobile-menu nav a{ padding: 1rem .5rem; }
+
+  /* Location map keeps a usable height instead of collapsing too short */
+  .location-map{ aspect-ratio: 4/3; min-height: 240px; }
+
+  /* CTA band buttons stack cleanly on mobile too */
+  .cta-actions{ flex-direction: column; align-items: stretch; }
+  .cta-actions .btn{ width: 100%; }
+}
+
+@media(max-width: 400px){
+  .hero-h1{ font-size: 2rem; }
+  .h2{ font-size: 1.65rem; }
+}
