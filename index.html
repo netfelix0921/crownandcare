@@ -15,14 +15,23 @@
 </head>
 <body>
 
+<!-- Reusable brand mark, used as the fallback wherever a real photo/logo
+     hasn't been dropped into /images yet. Referenced via <use> below. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="logomark" viewBox="0 0 48 48">
+      <path fill="currentColor" d="M8 21 12 10 18 18 24 8 30 18 36 10 40 21 38 30Q24 36 10 30Z"/>
+      <path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M12 32c4 5 20 5 24 0"/>
+    </symbol>
+  </defs>
+</svg>
+
 <!-- ============ NAVIGATION ============ -->
 <header class="nav" id="nav">
   <div class="nav-inner wrap">
     <a href="#top" class="brand">
       <img src="images/logo.png" alt="Crown & Care Dental Center" class="brand-logo" id="navLogo" onerror="handleImgFallback(this,'logo')">
-      <span class="brand-fallback" id="navLogoFallback" hidden>
-        <span class="brand-mark">C&amp;C</span>
-      </span>
+      <svg class="brand-fallback" id="navLogoFallback" width="30" height="30" viewBox="0 0 48 48" hidden aria-hidden="true"><use href="#logomark"></use></svg>
       <span class="brand-text">
         <span class="brand-name">Crown &amp; Care</span>
         <span class="brand-sub">Dental Center</span>
@@ -106,7 +115,9 @@
         <div class="hero-frame">
           <img src="images/wisdom-tooth.png" alt="Dental care at Crown & Care Dental Center" id="heroImg" onerror="handleImgFallback(this,'wisdomTooth')">
           <div class="hero-frame-fallback" id="heroImgFallback" hidden>
-            <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.5 2 6 4.5 6 8c0 2.5.8 3.8 1.3 5.8.5 2 .7 5.5 1.7 6.6.7.8 1.7.6 2-.4.3-1 .3-3 1-3s.7 2 1 3c.3 1 1.3 1.2 2 .4 1-1.1 1.2-4.6 1.7-6.6.5-2 1.3-3.3 1.3-5.8 0-3.5-2.5-6-6-6Z"/></svg>
+            <span class="fallback-badge">
+              <svg width="44" height="44" viewBox="0 0 48 48"><use href="#logomark"></use></svg>
+            </span>
           </div>
         </div>
         <div class="hero-chip">
@@ -135,7 +146,11 @@
       <div class="intro-visual reveal" style="--delay:1">
         <div class="framed-photo">
           <img src="images/clinic-1.png" alt="Inside Crown & Care Dental Center" id="introImg" onerror="handleImgFallback(this,'clinic1')">
-          <div class="framed-photo-fallback" id="introImgFallback" hidden></div>
+          <div class="framed-photo-fallback" id="introImgFallback" hidden>
+            <span class="fallback-badge">
+              <svg width="36" height="36" viewBox="0 0 48 48"><use href="#logomark"></use></svg>
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -209,17 +224,17 @@
       <div class="gallery-grid reveal">
         <button class="gallery-item gallery-large" data-lightbox="0" aria-label="View larger image">
           <img src="images/clinic-1.png" alt="Crown & Care clinic interior" id="gal0" onerror="handleImgFallback(this,'clinic1')">
-          <div class="gallery-item-fallback" id="gal0Fallback" hidden></div>
+          <div class="gallery-item-fallback" id="gal0Fallback" hidden><span class="fallback-badge"><svg width="34" height="34" viewBox="0 0 48 48"><use href="#logomark"></use></svg></span></div>
           <span class="gallery-zoom"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg></span>
         </button>
         <button class="gallery-item gallery-small" data-lightbox="1" aria-label="View larger image">
           <img src="images/clinic-2.png" alt="Crown & Care treatment room" id="gal1" onerror="handleImgFallback(this,'clinic2')">
-          <div class="gallery-item-fallback" id="gal1Fallback" hidden></div>
+          <div class="gallery-item-fallback" id="gal1Fallback" hidden><span class="fallback-badge"><svg width="30" height="30" viewBox="0 0 48 48"><use href="#logomark"></use></svg></span></div>
           <span class="gallery-zoom"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg></span>
         </button>
         <button class="gallery-item gallery-small" data-lightbox="2" aria-label="View larger image">
           <img src="images/clinic-3.png" alt="Crown & Care reception area" id="gal2" onerror="handleImgFallback(this,'clinic3')">
-          <div class="gallery-item-fallback" id="gal2Fallback" hidden></div>
+          <div class="gallery-item-fallback" id="gal2Fallback" hidden><span class="fallback-badge"><svg width="30" height="30" viewBox="0 0 48 48"><use href="#logomark"></use></svg></span></div>
           <span class="gallery-zoom"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg></span>
         </button>
       </div>
@@ -238,7 +253,7 @@
         <div class="treatment-card reveal">
           <div class="treatment-media">
             <img src="images/wisdom-tooth.png" alt="Wisdom tooth care" id="treat0" onerror="handleImgFallback(this,'wisdomTooth')">
-            <div class="treatment-media-fallback" id="treat0Fallback" hidden></div>
+            <div class="treatment-media-fallback" id="treat0Fallback" hidden><span class="fallback-badge"><svg width="36" height="36" viewBox="0 0 48 48"><use href="#logomark"></use></svg></span></div>
           </div>
           <div class="treatment-body">
             <h3 class="h3">Wisdom Tooth Care</h3>
@@ -250,7 +265,7 @@
         <div class="treatment-card reveal" style="--delay:1">
           <div class="treatment-media">
             <img src="images/braces.png" alt="Braces and orthodontic options" id="treat1" onerror="handleImgFallback(this,'braces')">
-            <div class="treatment-media-fallback" id="treat1Fallback" hidden></div>
+            <div class="treatment-media-fallback" id="treat1Fallback" hidden><span class="fallback-badge"><svg width="36" height="36" viewBox="0 0 48 48"><use href="#logomark"></use></svg></span></div>
           </div>
           <div class="treatment-body">
             <h3 class="h3">Braces &amp; Orthodontic Options</h3>
